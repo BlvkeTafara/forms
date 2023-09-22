@@ -1,0 +1,147 @@
+@model 
+
+@{
+    Layout 
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-pzjw8f+uaFM+Bf6b8z+1uCYDp26b8ner2fOQ8/o3yJ2mNgw7LvR4brgZ4D+1Bd4" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <h2>BOREHOLE MONITORING DATA: ABSTRACTIONS AND GROUNDWATER LEVELS</h2>
+
+    <form method="post" asp-action="SubmitForm">
+        <div class="form-group">
+            <label for="catchment">Catchment:</label>
+            <input type="text" class="form-control" id="catchment" name="Catchment">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Catchment)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="subCatchment">Sub-Catchment:</label>
+            <input type="text" class="form-control" id="subCatchment" name="SubCatchment">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.SubCatchment)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="permitNo">Abstraction Permit No.:</label>
+            <input type="text" class="form-control" id="permitNo" name="PermitNo">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.PermitNo)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="ownerName">Owner's Name:</label>
+            <input type="text" class="form-control" id="ownerName" name="OwnerName">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.OwnerName)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="gridReference">Grid Reference:</label>
+            <input type="text" class="form-control" id="gridReference" name="GridReference">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.GridReference)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="gpsX">GPS Reading X:</label>
+            <input type="text" class="form-control" id="gpsX" name="GPSX">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.GPSX)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="gpsY">GPS Reading Y:</label>
+            <input type="text" class="form-control" id="gpsY" name="GPSY">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.GPSY)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="boreholeNo">Borehole/Well No.:</label>
+            <input type="text" class="form-control" id="boreholeNo" name="BoreholeNo">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.BoreholeNo)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="boreholeDepth">Borehole/Well depth:</label>
+            <input type="text" class="form-control" id="boreholeDepth" name="BoreholeDepth">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.BoreholeDepth)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="pumpInletDepth">Pump inlet depth:</label>
+            <input type="text" class="form-control" id="pumpInletDepth" name="PumpInletDepth">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.PumpInletDepth)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="maxPumpingRate">Maximum allowable pumping rate:</label>
+            <input type="text" class="form-control" id="maxPumpingRate" name="MaxPumpingRate">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.MaxPumpingRate)</span>
+        </div>
+
+   
+        <div class="form-group">
+            <label for="maxAbstraction">Maximum permitted annual abstraction:</label>
+            <input type="text" class="form-control" id="maxAbstraction" name="MaxAbstraction">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.MaxAbstraction)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="text" class="form-control" id="date" name="Date">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Date)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="text" class="form-control" id="time" name="Time">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Time)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="waterLevel">Water Level:</label>
+            <input type="text" class="form-control" id="waterLevel" name="WaterLevel">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.WaterLevel)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="currentMeterReading">Current Meter Reading:</label>
+            <input type="text" class="form-control" id="currentMeterReading" name="CurrentMeterReading">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.CurrentMeterReading)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="previousMeterReading">Previous Meter Reading:</label>
+            <input type="text" class="form-control" id="previousMeterReading" name="PreviousMeterReading">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.PreviousMeterReading)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="daysSincePreviousReading">No of Days Since Previous Reading:</label>
+            <input type="text" class="form-control" id="daysSincePreviousReading" name="DaysSincePreviousReading">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.DaysSincePreviousReading)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="volumeWaterAbstracted">Volume of Water Abstracted Since Previous Reading:</label>
+            <input type="text" class="form-control" id="volumeWaterAbstracted" name="VolumeWaterAbstracted">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.VolumeWaterAbstracted)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="volumeAbstractedPerDay">Volume Abstracted Per Day:</label>
+            <input type="text" class="form-control" id="volumeAbstractedPerDay" name="VolumeAbstractedPerDay">
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.VolumeAbstractedPerDay)</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+uaFM+Bf6b8z+1uCYDp26b8ner2fOQ8/o3yJ2mNgw7LvR4brgZ4D+1Bd4" crossorigin="anonymous"></script>
+
+</body>
+</html>

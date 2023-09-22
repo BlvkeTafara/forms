@@ -1,0 +1,187 @@
+@model AbstractionPermitModel
+
+@{
+    ViewBag.Title = "Abstraction Permit";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abstraction Permit</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+uaFM+Bf6b8z+1uCYDp26b8ner2fOQ8/o3yJ2mNgw7LvR4brgZ4D+1Bd4" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h3>APPLICATION FOR *GENERAL/SPECIFIC GROUNDWATER ABSTRACTION PERMIT</h3>
+        <p>(Section 13 (2) of Water (Permits) Regulations, 2001)</p>
+
+        <form>
+            <h4>To be completed in quadruplicate</h4>
+            <p>Application for a specific abstraction permit to be accompanied by a detailed Hydrogeological Report</p>
+
+            <div class="form-group">
+                <label for="catchment">Catchment:</label>
+                <input type="text" class="form-control" id="catchment" name="Catchment" value="@Model.Catchment">
+            </div>
+
+            <div class="form-group">
+                <label for="subCatchment">Sub-Catchment:</label>
+                <input type="text" class="form-control" id="subCatchment" name="SubCatchment" value="@Model.SubCatchment">
+            </div>
+
+            <div class="form-group">
+                <label for="applicantName">Name of Applicant:</label>
+                <input type="text" class="form-control" id="applicantName" name="ApplicantName" value="@Model.ApplicantName">
+            </div>
+
+            <div class="form-group">
+                <label for="physicalAddress">Physical address:</label>
+                <input type="text" class="form-control" id="physicalAddress" name="PhysicalAddress" value="@Model.PhysicalAddress">
+            </div>
+
+            <div class="form-group">
+                <label for="postalAddress">Postal address:</label>
+                <input type="text" class="form-control" id="postalAddress" name="PostalAddress" value="@Model.PostalAddress">
+            </div>
+
+            <div class="form-group">
+                <label for="numBoreholes">Number of drilled boreholes:</label>
+                <input type="number" class="form-control" id="numBoreholes" name="NumBoreholes" value="@Model.NumBoreholes">
+            </div>
+
+            <div class="form-group">
+                <label for="landSize">Size of land or property (ha):</label>
+                <input type="number" class="form-control" id="landSize" name="LandSize" value="@Model.LandSize">
+            </div>
+
+            <div class="form-group">
+                <label for="allocatedAbstraction">Total proposed abstraction (m3/annum):</label>
+                <input type="number" class="form-control" id="allocatedAbstraction" name="AllocatedAbstraction" value="@Model.AllocatedAbstraction">
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Borehole (BH)-No.</th>
+                        <th>BH-No. Allocated</th>
+                        <th>Grid Reference</th>
+                        <th>GPS Reading X or Lat</th>
+                        <th>GPS Reading Y or Long</th>
+                        <th>Intended use</th>
+                        <th>Proposed abstraction rate (m3/annum)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="text" class="form-control" id="bhAllocated" name="BhAllocated" value="@Model.BhAllocated"></td>
+                        <td><input type="text" class="form-control" id="gridReference" name="GridReference" value="@Model.GridReference"></td>
+                        <td><input type="text" class="form-control" id="gpsX" name="GpsX" value="@Model.GpsX"></td>
+                        <td><input type="text" class="form-control" id="gpsY" name="GpsY" value="@Model.GpsY"></td>
+                        <td><input type="text" class="form-control" id="intendedUse" name="IntendedUse1" value="@Model.IntendedUse1"></td>
+                        <td><input type="number" class="form-control" id="abstractionRate1" name="AbstractionRate1" value="@Model.AbstractionRate1"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="text" class="form-control" id="bhAllocated2" name="BhAllocated2" value="@Model.BhAllocated2"></td>
+                        <td><input type="text" class="form-control" id="gridReference2" name="GridReference2" value="@Model.GridReference2"></td>
+                        <td><input type="text" class="form-control" id="gpsX2" name="GpsX2" value="@Model.GpsX2"></td>
+                        <td><input type="text" class="form-control" id="gpsY2" name="GpsY2" value="@Model.GpsY2"></td>
+                        <td><input type="text" class="form-control" id="intendedUse2" name="IntendedUse2" value="@Model.IntendedUse2"></td>
+                        <td><input type="number" class="form-control" id="abstractionRate2" name="AbstractionRate2" value="@Model.AbstractionRate2"></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <label for="intendedUse">Intended use (other):</label>
+                <input type="text" class="form-control" id="intendedUseOther" name="IntendedUseOther" value="@Model.IntendedUseOther">
+            </div>
+
+            <div class="form-group">
+                <label for="surfaceWaterPermitNo">Surface Water Permit No.:</label>
+                <input type="text" class="form-control" id="surfaceWaterPermitNo" name="SurfaceWaterPermitNo" value="@Model.SurfaceWaterPermitNo">
+            </div>
+
+            <div class="form-group">
+                <label for="permittedSurfaceWaterAbstraction">Permitted surface water abstraction (m3/a):</label>
+                <input type="number" class="form-control" id="permittedSurfaceWaterAbstraction" name="PermittedSurfaceWaterAbstraction" value="@Model.PermittedSurfaceWaterAbstraction">
+            </div>
+
+            <div class="form-group">
+                <label for="applicantName">I, (insert full name):</label>
+                <input type="text" class="form-control" id="fullName" name="FullName" value="@Model.FullName">
+            </div>
+
+            <div class="form-group">
+                <label for="consultantName">Name of Consultant/Agent:</label>
+                <input type="text" class="form-control" id="consultantName" name="ConsultantName" value="@Model.ConsultantName">
+            </div>
+
+            <div class="form-group">
+                <label for="consultantSignature">Signature:</label>
+                <input type="text" class="form-control" id="consultantSignature" name="ConsultantSignature" value="@Model.ConsultantSignature">
+            </div>
+
+            <div class="form-group">
+                <label for="consultantDate">Date:</label>
+                <input type="text" class="form-control" id="consultantDate" name="ConsultantDate" value="@Model.ConsultantDate">
+            </div>
+
+            <div class="form-group">
+                <label for="applicantSignature">Signature:</label>
+                <input type="text" class="form-control" id="applicantSignature" name="ApplicantSignature" value="@Model.ApplicantSignature">
+            </div>
+
+            <div class="form-group">
+                <label for="applicantDate">Date:</label>
+                <input type="text" class="form-control" id="applicantDate" name="ApplicantDate" value="@Model.ApplicantDate">
+            </div>
+
+            <div class="form-group">
+                <label for="applicantContact">Tel/fax No. (Provide STD code):</label>
+                <input type="text" class="form-control" id="applicantContact" name="ApplicantContact" value="@Model.ApplicantContact">
+            </div>
+
+            <div class="form-group">
+                <label for="applicantEmail">Applicant`s Email details:</label>
+                <input type="text" class="form-control" id="applicantEmail" name="ApplicantEmail" value="@Model.ApplicantEmail">
+            </div>
+
+            <div class="form-group">
+    <label for="subCatchmentComments">Comments by appropriate sub-catchment council:</label>
+    <textarea class="form-control" id="subCatchmentComments" name="SubCatchmentComments" rows="4"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="applicantSignature">Applicant's Signature:</label>
+    <input type="text" class="form-control" id="applicantSignature" name="ApplicantSignature" value="">
+</div>
+
+<div class="form-group">
+    <label for="date">Date:</label>
+</div>
+
+<div class="form-group">
+    <label for="witnessSignature">Witness Signature:</label>
+    <input type="text" class="form-control" id="witnessSignature" name="WitnessSignature" value="">
+</div>
+
+<div class="form-group">
+    <label for="date2">Date:</label>
+    <input type="date" class="form-control" id="date2" name="Date2" value="">
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+<!-- Add Bootstrap JS and jQuery links here -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-1gPn383B+2WI7vVgQCCfXKuWVbVCs0i4qJ4l4mU0WZVc4oR2EXsmzts8Y3T5u4vQ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+uaFM+Bf6b8z+1uCYDp26b8ner2fOQ8/o3yJ2mNgw7LvR4brgZ4D+1Bd4" crossorigin="anonymous"></script>
+</body>
+</html>

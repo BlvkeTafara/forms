@@ -1,0 +1,108 @@
+@model YourProjectName.Models.BoreholePermitModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>BOREHOLE PERMIT</h2>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4>TEMPORARY/PROVISIONAL* SPECIFIC GROUNDWATER ABSTRACTION PERMIT</h4>
+                <p>(Section 15 (3) (a) of Water (Permits) Regulations, 2001)</p>
+                <br />
+
+                <h5>OFFICIAL STAMP</h5>
+                <br />
+
+                <p>Form GW7B</p>
+                <br />
+
+                <p>The MANYAME Catchment Council hereby grants a *Temporary/Provisional General Abstraction Permit to:</p>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Catchment:</strong> @Html.TextBoxFor(model => model.Catchment, new { @class = "form-control" })</p>
+                        <p><strong>Sub-Catchment:</strong> @Html.TextBoxFor(model => model.SubCatchment, new { @class = "form-control" })</p>
+                        <p><strong>Name of Applicant:</strong> @Html.TextBoxFor(model => model.ApplicantName, new { @class = "form-control" })</p>
+                        <p><strong>Physical address:</strong> @Html.TextBoxFor(model => model.PhysicalAddress, new { @class = "form-control" })</p>
+                        <p><strong>Postal address:</strong> @Html.TextBoxFor(model => model.PostalAddress, new { @class = "form-control" })</p>
+                        <p><strong>Number of drilled boreholes:</strong> @Html.TextBoxFor(model => model.NumberOfBoreholes, new { @class = "form-control" })</p>
+                        <p><strong>Size of land or property (ha):</strong> @Html.TextBoxFor(model => model.LandSize, new { @class = "form-control" })</p>
+                        <p><strong>Total allocated abstraction (m3/annum):</strong> @Html.TextBoxFor(model => model.TotalAbstraction, new { @class = "form-control" })</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Borehole Information</h5>
+                <br />
+
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">BH-No.</th>
+                            <th scope="col">Allocated</th>
+                            <th scope="col">Grid Reference</th>
+                            <th scope="col">GPS reading X</th>
+                            <th scope="col">GPS reading Y</th>
+                            <th scope="col">Intended use</th>
+                            <th scope="col">Maximum abstraction rate (m3/annum)</th>
+                            <th scope="col">Water sample analysis every</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Html.TextBoxFor(model => model.BoreholeNo, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.Allocated, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.GridReference, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.GPSX, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.GPSY, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.IntendedUse, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.MaxAbstractionRate, new { @class = "form-control" })</td>
+                            <td>@Html.TextBoxFor(model => model.WaterSampleAnalysis, new { @class = "form-control" })</td>
+                        </tr>
+                    </tbody></table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Additional Conditions</h5>
+                <br />
+
+                <ol>
+                    <li>To install flow meters on all boreholes and keep records of water used</li>
+                    <li>Water Quality Analysis is to be carried out at most after every 3 months</li>
+                    <li>To submit abstraction and water quality records to catchment offices every six (6) months</li>
+                    <li>To allow unlimited access to ZINWA and SUB-CATCHMENT COUNCIL staff</li>
+                    <li>No cost shall be demanded from the Catchment Council in the event of permit cancellation</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Name (print):</strong> @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })</p>
+                <p><strong>(on behalf of the Catchment Council Chairperson):</strong> @Html.TextBoxFor(model => model.CouncilRepresentative, new { @class = "form-control" })</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

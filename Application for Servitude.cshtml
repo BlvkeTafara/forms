@@ -1,0 +1,95 @@
+@model Model
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Application for Servitude</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Application for Servitude</h1>
+        <form method="post" action="@Url.Action("SubmitApplication", "ServitudeController")">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", id = "fullName" })
+            </div>
+
+            <div class="form-group">
+                <label for="waterPermit">Water Permit No.:</label>
+                @Html.TextBoxFor(m => m.WaterPermitNo, new { @class = "form-control", id = "waterPermit" })
+            </div>
+
+            <div class="form-group">
+                <label for="registeredPropertyName">Registered Name of Property:</label>
+                @Html.TextBoxFor(m => m.RegisteredPropertyName, new { @class = "form-control", id = "registeredPropertyName" })
+            </div>
+
+<div class="form-group">
+    <label for="formOfTitle">Form of Title:</label>
+    @Html.TextBoxFor(m => m.FormOfTitle, new { @class = "form-control", id = "formOfTitle" })
+</div>
+
+<div class="form-group">
+    <label for="publicStream">Name of Public Stream:</label>
+    @Html.TextBoxFor(m => m.PublicStream, new { @class = "form-control", id = "publicStream" })
+</div>
+
+<div class="form-group">
+    <label for="catchmentCouncil">Catchment Council:</label>
+    @Html.TextBoxFor(m => m.CatchmentCouncil, new { @class = "form-control", id = "catchmentCouncil" })
+</div>
+
+<div class="form-group">
+    <label for="subcatchmentCouncil">Subcatchment Council:</label>
+    @Html.TextBoxFor(m => m.SubcatchmentCouncil, new { @class = "form-control", id = "subcatchmentCouncil" })
+</div>
+
+<div class="form-group">
+    <label for="propertyOwner">Full Name of Owner:</label>
+    @Html.TextBoxFor(m => m.PropertyOwner, new { @class = "form-control", id = "propertyOwner" })
+</div>
+
+<div class="form-group">
+    <label for="ownerAddress">Address of Owner:</label>
+    @Html.TextBoxFor(m => m.OwnerAddress, new { @class = "form-control", id = "ownerAddress" })
+</div>
+
+<div class="form-group">
+    <label for="mortgageeName">Full Name of Mortgagee (if applicable):</label>
+    @Html.TextBoxFor(m => m.MortgageeName, new { @class = "form-control", id = "mortgageeName" })
+</div>
+
+<div class="form-group">
+    <label for="mortgageeAddress">Address of Mortgagee (if applicable):</label>
+    @Html.TextBoxFor(m => m.MortgageeAddress, new { @class = "form-control", id = "mortgageeAddress" })
+</div>
+
+<div class="form-group">
+    <label for="lesseeName">Full Name of Lessee (if applicable):</label>
+    @Html.TextBoxFor(m => m.LesseeName, new { @class = "form-control", id = "lesseeName" })
+</div>
+
+<div class="form-group">
+    <label for="lesseeAddress">Address of Lessee (if applicable):</label>
+    @Html.TextBoxFor(m => m.LesseeAddress, new { @class = "form-control", id = "lesseeAddress" })
+</div>
+
+<div class="form-group">
+    <label for="lineOfPassage">Line of Passage along which the Water is to be Conducted or Diverted:</label>
+    @Html.TextAreaFor(m => m.LineOfPassage, new { @class = "form-control", id = "lineOfPassage", rows = "3" })
+</div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
